@@ -14,7 +14,7 @@ entity ex_mem_reg is
     port (
         clk : in std_logic;
         reset : in std_logic;
-		  insert_bubble : in std_logic;
+		insert_bubble : in std_logic;
 
         -- EX stage inputs - control
         ex_mem_read   : in std_logic;
@@ -107,25 +107,25 @@ begin
                 funct3_reg        <= (others => '0');
 
             elsif insert_bubble = '1' then
-					 mem_read_reg      <= '0';
-					 mem_write_reg     <= '0';
-					 branch_reg        <= '0';
-					 jump_reg          <= '0';
-					 jump_reg_reg      <= '0';
+				mem_read_reg      <= '0';
+				mem_write_reg     <= '0';
+				branch_reg        <= '0';
+				jump_reg          <= '0';
+				jump_reg_reg      <= '0';
 
-					 reg_write_reg     <= '0';
-					 mem_to_reg_reg    <= (others => '0');
+				reg_write_reg     <= '0';
+				mem_to_reg_reg    <= (others => '0');
 
-					 pc_plus4_reg      <= (others => '0');
-					 alu_result_reg    <= (others => '0');
-					 write_data_reg    <= (others => '0');
-					 branch_target_reg <= (others => '0');
-					 branch_taken_reg  <= '0';
+				pc_plus4_reg      <= (others => '0');
+				alu_result_reg    <= (others => '0');
+				write_data_reg    <= (others => '0');
+				branch_target_reg <= (others => '0');
+				branch_taken_reg  <= '0';
 
-					 rd_reg            <= (others => '0');
-					 funct3_reg        <= (others => '0');
+				rd_reg            <= (others => '0');
+				funct3_reg        <= (others => '0');
 				
-				else
+			else
                 mem_read_reg      <= ex_mem_read;
                 mem_write_reg     <= ex_mem_write;
                 branch_reg        <= ex_branch;
