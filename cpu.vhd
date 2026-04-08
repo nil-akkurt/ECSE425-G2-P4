@@ -487,7 +487,7 @@ begin
         port map (
             clk              => clk,
             reset            => reset,
-				insert_bubble => insert_bubble_ex_mem,
+			insert_bubble    => insert_bubble_ex_mem,
 
             ex_mem_read      => ex_mem_read,
             ex_mem_write     => ex_mem_write,
