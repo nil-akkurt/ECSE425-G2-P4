@@ -27,7 +27,7 @@ end register_file;
 architecture behavioral of register_file is
     -- Storage for the 32 registers
     type register_arr is array (0 to 31) of std_logic_vector(31 downto 0);
-    signal registers : register_arr := (others => (others => '0'));
+    signal registers : register_arr;
 
 begin
     -- Writing process
@@ -53,10 +53,18 @@ begin
 
     -- Asynchronous read ports
     -- If register 0 is selected, return zero.
-    read_data_1 <= (others => '0') when unsigned(read_reg_1) = 0 else
-                   registers(to_integer(unsigned(read_reg_1)));
+    process(read_reg_1, read_reg_2)
+    begin
+    if unsigned(read_reg_1) = 0 then
+        read_data_1 <= (others => '0');
+    else
+        read_data_1 <= registers(to_integer(unsigned(read_reg_1)));
+    end if;
 
-    read_data_2 <= (others => '0') when unsigned(read_reg_2) = 0 else
-                   registers(to_integer(unsigned(read_reg_2)));
-
+    if unsigned(read_reg_2) = 0 then
+        read_data_2 <= (others => '0');
+    else
+        read_data_2 <= registers(to_integer(unsigned(read_reg_2)));
+    end if;
+    end process;
 end behavioral;

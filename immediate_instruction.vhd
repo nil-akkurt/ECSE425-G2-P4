@@ -10,7 +10,7 @@ entity immediate_instruction is
     port (
         instruct : in std_logic_vector(31 downto 0);
         immediate_selector : in std_logic_vector(2 downto 0);
-        immediate_value :out std_logic_vector(31 downto 0);
+        immediate_value :out std_logic_vector(31 downto 0)
     );
 end immediate_instruction;
 

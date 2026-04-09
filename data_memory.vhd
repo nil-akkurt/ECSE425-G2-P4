@@ -76,7 +76,7 @@ begin
     -----------------------------------------------------------------------
     -- READ LOGIC (combinational)
     -----------------------------------------------------------------------
-    process(address, mem_read, funct3, mem)
+    process(address, mem_read, funct3)
         variable addr  : integer;
         variable byte0 : std_logic_vector(7 downto 0);
         variable byte1 : std_logic_vector(7 downto 0);
