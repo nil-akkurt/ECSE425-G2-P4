@@ -482,7 +482,7 @@ begin
     end process;
 	 
     -- EX/MEM pipeline register --
-	 insert_bubble_ex_mem <= '0';
+	 insert_bubble_ex_mem <= mem_control_transfer_taken;
 	 
     ex_mem_reg_inst : entity work.ex_mem_reg
         port map (
