@@ -53,7 +53,7 @@ begin
 
     -- Asynchronous read ports
     -- If register 0 is selected, return zero.
-    process(read_reg_1, read_reg_2)
+    process(read_reg_1, read_reg_2, registers)
     begin
     if unsigned(read_reg_1) = 0 then
         read_data_1 <= (others => '0');

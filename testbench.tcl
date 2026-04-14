@@ -20,7 +20,7 @@ vcom if_id_reg.vhd
 vcom id_ex_reg.vhd
 vcom ex_mem_reg.vhd
 vcom mem_wb_reg.vhd
-vcom -2008 cpu.vhd
+vcom cpu.vhd
 vcom testbench.vhd
 
 #run the simulation
